@@ -1,9 +1,17 @@
-import React from 'react'
+import { getAllEvents } from "../../dummy-data";
+import EventList from "../../components/events/event-list";
+import { Fragment } from "react";
+import EventsSearch from "./events-search";
 
 function EventsByIdPage() {
+  const events = getAllEvents();
+
   return (
-    <div>EventsByIdPage</div>
-  )
+    <Fragment>
+      <EventsSearch />
+      <EventList items={events} />
+    </Fragment>
+  );
 }
 
-export default EventsByIdPage
+export default EventsByIdPage;
